@@ -32,7 +32,7 @@ const prizes = [
     count: 16,
     text: "二等奖",
     title: "二等奖",
-    img: "../img/2.png"
+    img: "../img/2.jpg"
   },
   {
     type: 5,
