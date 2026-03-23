@@ -229,7 +229,7 @@ function bindEvent() {
       // 进入抽奖
       case "enter":
         removeHighlight();
-        addQipao(`马上抽取[${currentPrize.title}],不要走开。`);
+        addQipao(`马上抽取 [${currentPrize.title}], 不要走开。`);
         // rotate = !rotate;
         rotate = true;
         switchScreen("lottery");
@@ -267,7 +267,7 @@ function bindEvent() {
           // 抽奖
           lottery();
         });
-        addQipao(`正在抽取[${currentPrize.title}],调整好姿势`);
+        addQipao(`正在抽取 [${currentPrize.title}], 调整好姿势`);
         break;
       // 重新抽奖
       case "reLottery":
@@ -276,7 +276,7 @@ function bindEvent() {
           return;
         }
         setErrorData(currentLuckys);
-        addQipao(`重新抽取[${currentPrize.title}],做好准备`);
+        addQipao(`重新抽取 [${currentPrize.title}], 做好准备`);
         setLotteryStatus(true);
         // 重新抽奖则直接进行抽取，不对上一次的抽奖数据进行保存
         // 抽奖
@@ -293,7 +293,7 @@ function bindEvent() {
             currentLuckys = [];
           });
           exportData();
-          addQipao(`数据已保存到EXCEL中。`);
+          addQipao(`数据已保存到 EXCEL 中。`);
         });
         break;
     }
@@ -349,7 +349,7 @@ function createCard(user, isBold, id, showTable) {
 
   element.appendChild(createElement("name", user[1]));
 
-  element.appendChild(createElement("details", user[0] + "<br/>" + user[2]));
+  element.appendChild(createElement("details", user[0]/* + "<br/>" + user[2] */));
   return element;
 }
 
@@ -511,7 +511,7 @@ function selectCard(duration = 600) {
 
   let text = currentLuckys.map(item => item[1]);
   addQipao(
-    `恭喜${text.join("、")}获得${currentPrize.title}, 新的一年必定旺旺旺。`
+    `恭喜${text.join("、")}获得${currentPrize.title}`
   );
 
   selectedCardIndex.forEach((cardIndex, index) => {
@@ -709,7 +709,7 @@ function changeCard(cardIndex, user) {
 
   card.innerHTML = `<div class="company">${COMPANY}</div><div class="name">${
     user[1]
-  }</div><div class="details">${user[0] || ""}<br/>${user[2] || "PSST"}</div>`;
+  }</div><div class="details">${user[0] || ""}</div>`;
 }
 
 /**

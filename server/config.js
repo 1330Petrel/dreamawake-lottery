@@ -51,7 +51,7 @@ const EACH_COUNT = [1, 1, 3, 4, 6];
 /**
  * 卡片公司名称标识
  */
-const COMPANY = "DreamAwake";
+const COMPANY = "零极岛";
 
 module.exports = {
   prizes,
