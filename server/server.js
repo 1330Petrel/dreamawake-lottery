@@ -204,7 +204,7 @@ function setErrorData(data) {
 app.use(router);
 
 function loadData() {
-  console.log("加载EXCEL数据文件");
+  console.log("加载 EXCEL 数据文件");
   let cfgData = {};
 
   // curData.users = loadXML(path.join(cwd, "data/users.xlsx"));
